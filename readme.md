@@ -1,22 +1,17 @@
 # The Chickadee Programming Language 
 
-This is a very simple interpreter for a minimalist programming language called Chickadee built for an internal tech talk at [Clemex technologies](http://www.clemex.com).
-
-Chickadee was developed for teaching how to build simple interpreters using TypeScript, aimed at people not necessarily very familiar with TypeScript. 
-
-Chickadee supports basic numerical and boolean expressions, variables, and lambda-expressions.
+Chickadee is a minimalist programming language that was built for an internal tech talk at [Clemex technologies](http://www.clemex.com) as a lesson in how to build interpreters using TypeScript. Chickadee supports basic numerical and boolean expressions, variables, statements, blocks, and lambda-expressions. 
 
 Here is an example program. 
 
 ```
-var fib = (x) => 
-   x <= 1 
-      ? 1 
-      : fib(x - 1) + fib(x - 2); 
+var fib = (x) => {
+   x <= 1 ? 1 : fib(x - 1) + fib(x - 2);
+}
 fib(7);
 ```
 
-The Chickadee evaluator executes a pre-processed typed abstract syntax tree. The parser is in a separate file and has a dependency on the Myna parsing library which is a TypeScript syntactic analysis library that is contained in a single file with no additional dependencies.
+The Chickadee evaluator executes a pre-processed typed abstract syntax tree. The parser is in a separate file and has a dependency on the [Myna parsing library](https://github.com/cdiggins/myna-parser), a single-file syntactic analysis library written in TypeScript with no additional dependencies.
 
 ## Code Structure 
 
@@ -28,7 +23,7 @@ The Chickadee evaluator executes a pre-processed typed abstract syntax tree. The
 
 ## How it Works 
 
-The basic logic for how the interpreter works: 
+The basic logic for the Chickadee interpreter is: 
 
 1. Define a grammar and parser using the Myna library 
 2. Execute the generated parser on the input to generate an untyped abstract syntax tree (AST) 
