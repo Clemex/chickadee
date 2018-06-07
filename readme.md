@@ -40,6 +40,12 @@ The basic logic for how the interpreter works:
 
 ## The Tutorial
 
-The code is structured as a tutorial, where the modules from `chickadee-part0.ts` to `chickadee-part6.ts` each add more functionality to the basic interpreter. 
+The [`main.ts`](https://github.com/Clemex/chickadee/blob/master/src/main.ts) module imports one of the different modules from `chickadee-part0.ts` to `chickadee-part6.ts`. Each one of these add more functionality than the previous, and enable more tests to pass. 
 
-(part-0)[https://github.com/Clemex/chickadee/blob/master/src/chickadee-part0.ts]
+* [part-0](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part0.ts) - All tests fail, just outputs the AST for each test. 
+* [part-1](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part1.ts) - Numbers, numerical operators, and parentheses.  
+* [part-2](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part2.ts) - Add an object for managing environments. 
+* [part-3](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part3.ts) - Introduction of variables 
+* [part-4](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part4.ts) - Conditionals, booleans, and comparison operators 
+* [part-5](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part5.ts) - Proper scoping of variables
+* [part-6](https://github.com/Clemex/chickadee/blob/master/src/chickadee-part6.ts) - Support for defining and invoking lambdas.
