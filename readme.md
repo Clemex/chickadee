@@ -4,6 +4,18 @@ This is a very simple interpreter for a minimalist programming language called C
 
 Chickadee was developed for teaching how to build simple interpreters using TypeScript, aimed at people not necessarily very familiar with TypeScript. 
 
+Chickadee supports basic numerical and boolean expressions, variables, and lambda-expressions.
+
+Here is an example program. 
+
+```
+var fib = (x) => 
+   x <= 1 
+      ? 1 
+      : fib(x - 1) + fib(x - 2); 
+fib(7);
+```
+
 The Chickadee evaluator executes a pre-processed typed abstract syntax tree. The parser is in a separate file and has a dependency on the Myna parsing library which is a TypeScript syntactic analysis library that is contained in a single file with no additional dependencies.
 
 ## How it Works 
@@ -16,7 +28,7 @@ The basic logic for how the interpreter works:
     * Assure that binary operations have only two node: a + b + c => (a + b) + c
     * Any expression that has one node is replaced by that child
 4. Convert the untyped Myna AST into a typed AST for Chickadee
-5. Run the evaluator recursively from the root node 
+5. Run the evaluation function which converts nodes to values
 
 ## Code Structure 
 
